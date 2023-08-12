@@ -189,6 +189,33 @@ func (f *FileW) WritelnNumber(num int) {
 	f.file.WriteString(str + "\r\n")
 }
 
+// WriteString записывает строку в файл
+func (f *FileW) WriteString(str string) {
+	f.file.WriteString(str)
+}
+
+// WriteNumber записывает число в файл
+func (f *FileW) WriteNumber(num int) {
+	str := strconv.Itoa(num)
+	f.file.WriteString(str)
+}
+
+// WriteStringWithSpace записывает строку в файл и добавляет пробел в конец
+func (f *FileW) WriteStringWithSpace(str string) {
+	f.file.WriteString(str + " ")
+}
+
+// WriteNumberWithSpace записывает число в файл и добавляет пробел в конец
+func (f *FileW) WriteNumberWithSpace(num int) {
+	str := strconv.Itoa(num)
+	f.file.WriteString(str + " ")
+}
+
+// WriteSpace записывает число в файл
+func (f *FileW) WriteSpace() {
+	f.file.WriteString(" ")
+}
+
 /* --- Модуль сравнения файлов --- */
 
 // CompareFile сравнивает n файлов, если хотя бы один из них отличается, возвращает false
