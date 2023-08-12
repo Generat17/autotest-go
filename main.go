@@ -50,7 +50,7 @@ type StringReader struct {
 	len int
 }
 
-// NewStringReader конструктор, сканнер по строке
+// NewStringReader конструктор, возвращает сканнер по строке
 func NewStringReader(str string) *StringReader {
 
 	return &StringReader{
@@ -101,7 +101,7 @@ func (s *StringReader) ReadNumber() int {
 	return number
 }
 
-// FileR открывает файл
+// FileR хранит сканнер по открытому файлу
 type FileR struct {
 	data *bufio.Scanner
 }
@@ -154,8 +154,7 @@ func (f *FileR) ReadStringAsNumber() int {
 	return number
 }
 
-// FileW запись в файл
-// создает новый файл или обнуляет существующий
+// FileW хранит дискриптор на открытый файл, готовый к записи
 type FileW struct {
 	file *os.File
 }
