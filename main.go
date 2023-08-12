@@ -1,4 +1,4 @@
-package main
+package autotestGo
 
 import (
 	"bufio"
